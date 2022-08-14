@@ -1,0 +1,27 @@
+<section class="home section section--bg" data-bg="../assets/img/section/section.jpg">
+	<div class="container">
+		<div class="row" style="justify-content: center;">
+			<div class="col-5" style="display: inline-block;">
+
+				{{ form_start(form, {'attr': {'class': 'sign__form'}}) }}
+				<h1 class="home__title" style="margin-bottom:20px;">New Booking</h1>
+				<div class="sign__group">
+					{{ form_row(form.theater, {'attr': {'class': 'sign__input', 'style': 'margin-bottom:10px'}}) }}
+				</div>
+				<div class="sign__group">
+					{{ form_row(form.movie, {'attr': {'class': 'sign__input', 'style': 'margin-bottom:10px'}}) }}
+				</div>
+				<div class="sign__group">
+					{% if form.no_of_seats > '1' ? form.no_of_seats : 1 %}
+						{{ form_row(form.no_of_seats, {'label': 'Seats', 'attr': {'class': 'sign__input', 'style': 'margin-bottom:10px'}}) }}
+					{% endif %}
+				</div>
+				<div class="sign__group">
+					{{ form_row(form.booking_time, {'label': 'Time', 'attr': {'class': 'sign__input', 'style': 'margin-bottom:10px'}}) }}
+				</div>
+				<button class="sign__btn">{{ button_label|default('Book') }}</button>
+				{{ form_end(form) }}
+
+			</div>
+		</div>
+	</section>

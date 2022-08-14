@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-12">
+			<div
+				class="sign__content">
+				<!-- authorization form -->
+				<form method="post" class="sign__form" style="margin-top:90px;">
+					{% if error %}
+						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+					{% endif %}
+
+					{% if app.user %}
+						<div class="mb-3">
+							You are logged in as
+							{{ app.user.username }},
+							<a href="{{ path('app_logout') }}">Logout</a>
+						</div>
+					{% endif %}
+
+					<a href="{{ path('home') }}" class="sign__logo" style="color: white;">
+						<h1>CineMax</h1>
+					</a>
+
+					<div class="sign__group">
+						<input class="sign__input" placeholder="Email" type="email" value="{{ last_username }}" name="email" id="inputEmail" required autofocus>
+					</div>
+
+					<div class="sign__group">
+						<input type="password" name="password" class="sign__input" placeholder="Password" id="inputPassword" required>
+					</div>
+
+					<div class="sign__group sign__group--checkbox">
+						<input id="remember" name="_remember_me" type="checkbox" checked="checked">
+						<label for="remember">Remember Me</label>
+					</div>
+
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+					<button class="sign__btn" type="submit">Log In</button>
+
+					<span class="sign__text">Don't have an account?
+						<a href="{{ path('app_register') }}">Register!</a>
+					</span>
+
+					<span class="sign__text">
+						<a href="/reset-password">Forgot password?</a>
+					</span>
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

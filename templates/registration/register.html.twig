@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<div class="sign section--bg" data-bg="assets/img/section/section.jpg" style="background:white; padding: 100px;">
+    <div class="container">
+        <div class="row" style="justify-content: center;">
+            <div class="col-5" style="display: inline-block;">
+                <div class="sign__form" style="margin-top: 100px;">
+                    <h1 class="home__title" >Register</h1>
+                    {{ form_start(registrationForm) }}
+                    <div class="sign__group col-lg-12" style="display: inline-block; padding-top: 20px;">
+                        {{ form_row(registrationForm.name) }}
+                    </div>
+                    <div class="sign__group col-lg-12" style="display: inline-block; padding-top: 20px;">
+                        {{ form_row(registrationForm.email) }}
+                    </div>
+                    <div class="sign__group col-lg-12" style="display: inline-block; padding-top: 20px;">
+                        {{ form_row(registrationForm.plainPassword, {
+                            label: 'Pass'
+                        }) }}
+                    </div>
+                        <button type="submit" class="col-3 sign__btn">Register</button>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

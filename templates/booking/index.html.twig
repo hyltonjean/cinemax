@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Your Bookings
+{% endblock %}
+
+{% block body %}
+	<section class="home section section--bg" data-bg="../assets/img/section/section.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="home__title" style="margin-bottom:10px;">Your Bookings</h1>
+					<div class="d-flex justify-content-center col-12">
+						<div class="">
+							<table class="table">
+								<thead>
+									<tr>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for booking in bookings %}
+										<tr>
+											<td>
+												<h2 class="card__title" style="margin-bottom:10px;">
+													<a href="{{ path('app_booking_show', {'id': booking.id}) }}">{{ booking.ticketNo }}</a>
+												</h2>
+											</td>
+										</tr>
+									{% else %}
+										<tr>
+											<td colspan="6">no records found</td>
+										</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	{% endblock %}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>
+			CineMax
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		<!-- Font -->
+		<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CUbuntu:300,400,500,700" rel="stylesheet"> <!-- CSS -->
+		<link rel="stylesheet" href="../../assets/css/bootstrap-reboot.min.css">
+		<link rel="stylesheet" href="../../assets/css/bootstrap-grid.min.css">
+		<link rel="stylesheet" href="../../assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="../../assets/css/jquery.mCustomScrollbar.min.css">
+		<link rel="stylesheet" href="../../assets/css/nouislider.min.css">
+		<link rel="stylesheet" href="../../assets/css/ionicons.min.css">
+		<link rel="stylesheet" href="../../assets/css/plyr.css">
+		<link rel="stylesheet" href="../../assets/css/photoswipe.css">
+		<link rel="stylesheet" href="../../assets/css/default-skin.css">
+		<link rel="stylesheet" href="../../assets/css/main.css">
+	</head>
+	<body>
+		<!-- header -->
+		<header class="header">
+			<div class="header__wrap content__header">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div
+								class="header__content">
+								<!-- header logo -->
+								<a href="{{ path('home') }}" class="header__logo" style="color: white;">
+									<h1>CineMax</h1>
+								</a>
+								<!-- end header logo -->
+
+								<!-- header nav -->
+								<ul class="header__nav">
+									<li class="header__nav-item">
+										<a class="header__nav-link" href="{{ path('home') }}">Home</a>
+									</li>
+								</ul>
+								<!-- end header nav -->
+
+								<!-- header auth -->
+								<div class="header__auth">
+									{% if not app.user %}
+										<a href="{{ path('app_login') }}" class="header__sign-in">
+											<span>Log In</span>
+										</a>
+									{% else %}
+										<h4 style="color:white; padding-right:10px;">Hello
+											{{ app.user.name }}</h4>
+										<a href="{{ path('app_logout') }}" class="header__sign-in">
+											<span>Logout</span>
+										</a>
+									{% endif %}
+								</div>
+								<!-- end header auth -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- end header -->
+		<div class="container card" style="margin-top:150px; text-align:center;">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="home__title" style="font-size: 150px; margin-top:50px; font-weight: 900;">404</h1>
+					<h1 class="home__title" style="margin-top:50px">Page not found</h1>
+
+					<p class="card__title" style="margin:50px 0;">
+						The requested page couldn't be located. Checkout for any URL
+																																																																																																																																																																																																																							misspelling or
+						<a href="{{ path('home') }}" style="color:#ff55a5; margin-bottom:100px;">return to the homepage</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- footer -->
+		<footer class="footer">
+			<div class="container">
+				<div
+					class="row">
+					<!-- footer list -->
+					<div class="col-12 col-md-3">
+						<h6 class="footer__title">Download Our App</h6>
+						<ul class="footer__app">
+							<li>
+								<a href="#"><img src="../../assets/img/Download_on_the_App_Store_Badge.svg" alt=""></a>
+							</li>
+							<li>
+								<a href="#"><img src="../../assets/img/google-play-badge.png" alt=""></a>
+							</li>
+						</ul>
+					</div>
+					<!-- end footer list -->
+
+					<!-- footer list -->
+					<div class="col-6 col-sm-4 col-md-3">
+						<h6 class="footer__title">Resources</h6>
+						<ul class="footer__list">
+							<li>
+								<a href="#">Home</a>
+							</li>
+							<li>
+								<a href="#">Movies</a>
+							</li>
+							<li>
+								<a href="#">Theaters</a>
+							</li>
+						</ul>
+					</div>
+					<!-- end footer list -->
+
+					<!-- footer list -->
+					<div class="col-6 col-sm-4 col-md-3">
+						<h6 class="footer__title">Legal</h6>
+						<ul class="footer__list">
+							<li>
+								<a href="#">Terms of Use</a>
+							</li>
+							<li>
+								<a href="#">Privacy Policy</a>
+							</li>
+							<li>
+								<a href="#">Security</a>
+							</li>
+						</ul>
+					</div>
+					<!-- end footer list -->
+
+					<!-- footer list -->
+					<div class="col-12 col-sm-4 col-md-3">
+						<h6 class="footer__title">Contact</h6>
+						<ul class="footer__list">
+							<li>
+								<a href="#">+27 (021) 234-5678</a>
+							</li>
+							<li>
+								<a href="#">support@cinemax.com</a>
+							</li>
+						</ul>
+						<ul class="footer__social">
+							<li class="facebook">
+								<a href="#">
+									<i class="icon ion-logo-facebook"></i>
+								</a>
+							</li>
+							<li class="instagram">
+								<a href="#">
+									<i class="icon ion-logo-instagram"></i>
+								</a>
+							</li>
+							<li class="twitter">
+								<a href="#">
+									<i class="icon ion-logo-twitter"></i>
+								</a>
+							</li>
+							<li class="vk">
+								<a href="#">
+									<i class="icon ion-logo-vk"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- end footer list -->
+
+					<!-- footer copyright -->
+					<div class="col-12">
+						<div class="footer__copyright">
+							<small>
+								<a href="#">Cinemax &copy; 2022 | All rights reserved.</a>
+							</small>
+
+							<ul>
+								<li><a href="#">Terms of Use</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- end footer copyright -->
+				</div>
+			</div>
+		</footer>
+		<!-- end footer -->
+
+		<!-- JS -->
+		<script src="../../assets/js/jquery-3.3.1.min.js"></script>
+		<script src="../../assets/js/bootstrap.bundle.min.js"></script>
+		<script src="../../assets/js/owl.carousel.min.js"></script>
+		<script src="../../assets/js/jquery.mousewheel.min.js"></script>
+		<script src="../../assets/js/jquery.mCustomScrollbar.min.js"></script>
+		<script src="../../assets/js/wNumb.js"></script>
+		<script src="../../assets/js/nouislider.min.js"></script>
+		<script src="../../assets/js/plyr.min.js"></script>
+		<script src="../../assets/js/jquery.morelines.min.js"></script>
+		<script src="../../assets/js/photoswipe.min.js"></script>
+		<script src="../../assets/js/photoswipe-ui-default.min.js"></script>
+		<script src="../../assets/js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,180 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<!-- details -->
+	<section
+		class="section details">
+		<!-- details background -->
+		<div class="details__bg" data-bg="../assets/img/home/home__bg.jpg"></div>
+		<!-- end details background -->
+
+		<!-- details content -->
+		<div class="container">
+			<div
+				class="row">
+				<!-- title -->
+				<div class="col-12">
+					<h1 class="details__title">{{ movie.movieName }}</h1>
+				</div>
+				<!-- end title -->
+
+				<!-- content -->
+				<div class="col-10">
+					<div class="card card--details card--series">
+						<div
+							class="row">
+							<!-- card cover -->
+							<div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-3">
+								<div class="card__cover">
+									<img src="{{ movie.imgurl }}" alt="">
+								</div>
+							</div>
+							<!-- end card cover -->
+
+							<!-- card content -->
+							<div class="col-12 col-sm-8 col-md-8 col-lg-9 col-xl-9">
+								<div class="card__content">
+									<ul class="card__meta">
+										<li>
+											<span>Genre:</span>
+											Action</li>
+										<li>
+											<span>Release year:</span>
+											2022</li>
+										<li>
+											<span>Running time:</span>
+											120 min</li>
+										<li>
+											<span>Country:</span>
+											USA</li>
+									</ul>
+								</div>
+								<div class="card__wrap">
+									<ul class="card__list" style="margin-top:15px; margin-left:0!important;">
+										<li>IMAX</li>
+										<li>Nouveau</li>
+										<li>3D</li>
+										<li>13</li>
+									</ul>
+								</div>
+
+								<div class="card__description card__description--details">
+									{{ movie.description }}
+								</div>
+								<a href="{{ path('app_booking_new') }}" class="header__sign-in" style="margin-top:10px;">
+									<span>Book Now</span>
+								</a>
+							</div>
+							<!-- end card content -->
+						</div>
+					</div>
+				</div>
+				<!-- end content -->
+
+				<!-- player -->
+				<div class="col-12 col-xl-6">
+					<iframe width="540" height="300" src="{{ movie.trailer }}" title="Thor: Love and Thunder" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<!-- end player -->
+
+				<!-- accordion -->
+				<div class="col-12 col-xl-6">
+					<div class="accordion" id="accordion">
+						<div class="accordion__card">
+							<div class="card-header" id="headingOne">
+								<button type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									<span>Preview Dates</span>
+									<span>now until 31 December 2022</span>
+								</button>
+							</div>
+
+							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+								<div class="card-body">
+									<table class="accordion__list">
+										<thead>
+											<tr>
+												<th>Day</th>
+												<th>Air Date</th>
+												<th>Time</th>
+											</tr>
+										</thead>
+
+										<tbody>
+											<tr>
+												<th>Monday</th>
+												<td>August 22st 2022</td>
+												<td>10:15, 19:45</td>
+											</tr>
+											<tr>
+												<th>Tuesday</th>
+												<td>August 23st 2022</td>
+												<td>10:15, 19:45</td>
+											</tr>
+											<tr>
+												<th>Wednesday</th>
+												<td>August 24st 2022</td>
+												<td>10:15, 19:45</td>
+											</tr>
+											<tr>
+												<th>Thursday</th>
+												<td>August 25st 2022</td>
+												<td>10:15, 19:45</td>
+											</tr>
+											<tr>
+												<th>Friday</th>
+												<td>August 26st 2022</td>
+												<td>10:15, 19:45</td>
+											</tr>
+											<tr>
+												<th>Saturday</th>
+												<td>August 27st 2022</td>
+												<td>10:15, 19:45</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end accordion -->
+
+				<div class="col-12">
+					<div
+						class="details__wrap">
+						<!-- share -->
+						<div class="details__share">
+							<span class="details__share-title">Share with friends:</span>
+
+							<ul class="details__share-list">
+								<li class="facebook">
+									<a href="#">
+										<i class="icon ion-logo-facebook"></i>
+									</a>
+								</li>
+								<li class="instagram">
+									<a href="#">
+										<i class="icon ion-logo-instagram"></i>
+									</a>
+								</li>
+								<li class="twitter">
+									<a href="#">
+										<i class="icon ion-logo-twitter"></i>
+									</a>
+								</li>
+								<li class="vk">
+									<a href="#">
+										<i class="icon ion-logo-vk"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- end share -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end details content -->
+	</section>
+	<!-- end details -->
+{% endblock %}

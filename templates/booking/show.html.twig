@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Show Booking
+{% endblock %}
+
+{% block body %}
+	<section class="home section section--bg" data-bg="../assets/img/section/section.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="home__title" style="margin-bottom:40px;">Booking
+						{{ booking.id }}</h1>
+					<div class="d-flex justify-content-center col-12">
+						<table class="table card__list">
+							<tbody>
+								<tr>
+									<th>
+										<h3 class="card-header" style="color:white; margin-right:10px">Ticket no</h3>
+									</th>
+									<td>
+										<h3 class="details__title" style="color:white; margin-left:30px; margin-bottom:15px;">{{ booking.ticketNo }}</h3>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<h3 class="card-header" style="color:white; margin-right:10px">Theater</h3>
+									</th>
+									<td>
+										<h3 class="details__title" style="color:white; margin-left:30px; margin-bottom:15px;">{{ booking.getTheater }}</h3>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<h3 class="card-header" style="color:white; margin-right:10px">Movie</h3>
+									</th>
+									<td>
+										<h3 class="details__title" style="color:white; margin-left:30px; margin-bottom:15px;">{{ booking.getMovie }}</h3>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<h3 class="card-header" style="color:white; margin-right:10px">No Seats</h3>
+									</th>
+									<td>
+										<h3 class="details__title" style="color:white; margin-left:30px; margin-bottom:15px;">{{ booking.noOfSeats }}</h3>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<h3 class="card-header" style="color:white;">Time</h3>
+									</th>
+									<td>
+										<h3 class="details__title" style="color:white; margin-left:30px; margin-bottom:15px;">{{ booking.bookingTime }}</h3>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<h5 class="card-header" style="color:white; margin-top:30px; text-align:center; font-weight:300;">Enjoy the show at CineMax
+						<b>{{ booking.user}}</b>
+					</h5>
+					{{ include('booking/_delete_form.html.twig') }}
+				</div>
+			</div>
+		</section>
+	{% endblock %}
