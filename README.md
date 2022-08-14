@@ -1,37 +1,44 @@
 Cinemax - A Cinema booking project build with Symfony 5.4
 ========================
 
-Requirements
+Minimum Requirements
 ------------
 
   * PHP 7.4.19 or higher;
   * Apache 2.4.47 or higher;
-  * and the [usual Symfony application requirements](https://symfony.com/book).
+  * MySQL 5.7.33 or higher;
 
 Installation
 ------------
 
-[Download Symfony](https://symfony.com/download) to install the `symfony` binary on your computer and run
-this command:
-
+Install and update composer: 
 ```bash
-$ symfony new --demo my_project
+$ composer install
+$ composer update
+```
+[Download Symfony](https://symfony.com/download) to install the `symfony` binary on your computer and run
+this command to migrate to the DB:
+```bash
+$ symfony console doctrine:migrations:migrate
 ```
 
 Alternatively, you can use Composer:
-
 ```bash
-$ composer create-project symfony/symfony-demo my_project
+$ php bin/console doctrine:migrations:migrate
 ```
 
-Usage
------
+The DB .sql file is located in /public/db directory if you do not want to migrate the DB manually.
 
-There's no need to configure anything to run the application. If you have
+Change .env file to match your DB credentials e.g.
+
+```bash
+$ DATABASE_URL="mysql://DB_USERNAME:DB_PASSWORD@127.0.0.1:DB_PORT/DB_NAME?serverVersion=8&charset=utf8mb4"
+```
+
+There's no need to configure anything else to run the application. If you have
 installed Symfony binary, run this command:
 
 ```bash
-$ cd my_project/
 $ symfony serve
 ```
 
