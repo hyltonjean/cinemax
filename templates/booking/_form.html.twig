@@ -12,9 +12,7 @@
 					{{ form_row(form.movie, {'attr': {'class': 'sign__input', 'style': 'margin-bottom:10px'}}) }}
 				</div>
 				<div class="sign__group">
-					{% if form.no_of_seats > '1' ? form.no_of_seats : 1 %}
-						{{ form_row(form.no_of_seats, {'label': 'Seats', 'attr': {'class': 'sign__input', 'style': 'margin-bottom:10px'}}) }}
-					{% endif %}
+					{{ form_row(form.no_of_seats, {'label': 'Seats', 'attr': {'class': 'sign__input', 'style': 'margin-bottom:10px', 'value':'1', 'min':'1' }}) }}
 				</div>
 				<div class="sign__group">
 					{{ form_row(form.booking_time, {'label': 'Time', 'attr': {'class': 'sign__input', 'style': 'margin-bottom:10px'}}) }}
